@@ -1,0 +1,1719 @@
+{
+	"info": {
+		"_postman_id": "c757e51e-ab72-45d5-8f3c-51da75447585",
+		"name": "Perkuliahan API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20068270"
+	},
+	"item": [
+		{
+			"name": "Buku",
+			"item": [
+				{
+					"name": "buku",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "KEY",
+								"value": "ulbi123",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "id_buku",
+								"value": "buku_003",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost/ci_rest_perpustakaan/index.php/buku/book?KEY=ulbi123&id_buku=buku_010",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ci_rest_perpustakaan",
+								"index.php",
+								"buku",
+								"book"
+							],
+							"query": [
+								{
+									"key": "KEY",
+									"value": "ulbi123"
+								},
+								{
+									"key": "id_buku",
+									"value": "buku_010"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "KEY",
+										"value": "ulbi123",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost/ci_rest_perpustakaan/index.php/buku/book",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"ci_rest_perpustakaan",
+										"index.php",
+										"buku",
+										"book"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 07 Jul 2022 01:54:14 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/7.4.27"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.27"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1000"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id_buku\": \"buku_001\",\n            \"nama_buku\": \"Mimpi Sejuta Rupiah\",\n            \"halaman_buku\": \"362\",\n            \"penerbit\": \"Merry Riana\",\n            \"tahun_terbit\": \"2011\",\n            \"id_jenis_buku\": \"jns_001\"\n        },\n        {\n            \"id_buku\": \"buku_002\",\n            \"nama_buku\": \"Buku Ensiklopedia Sains\",\n            \"halaman_buku\": \"456\",\n            \"penerbit\": \"Bhuana Ilmu Populer\",\n            \"tahun_terbit\": \"2014\",\n            \"id_jenis_buku\": \"jns_002\"\n        },\n        {\n            \"id_buku\": \"buku_003\",\n            \"nama_buku\": \"Sang Pemimpi\",\n            \"halaman_buku\": \"292\",\n            \"penerbit\": \"Andrea Hirata\",\n            \"tahun_terbit\": \"2006\",\n            \"id_jenis_buku\": \"jns_003\"\n        },\n        {\n            \"id_buku\": \"buku_004\",\n            \"nama_buku\": \"Dunia Kuno Empat Benua\",\n            \"halaman_buku\": \"188\",\n            \"penerbit\": \"Anisa Septianingrum, M.Pd.\",\n            \"tahun_terbit\": \"2017\",\n            \"id_jenis_buku\": \"jns_004\"\n        },\n        {\n            \"id_buku\": \"buku_005\",\n            \"nama_buku\": \"Kamu Besar Bahasa Inggris - Bahasa Indonesia\",\n            \"halaman_buku\": \"688\",\n            \"penerbit\": \"WIDYA KARYA\",\n            \"tahun_terbit\": \"2015\",\n            \"id_jenis_buku\": \"jns_005\"\n        },\n        {\n            \"id_buku\": \"buku_006\",\n            \"nama_buku\": \"Kisah Pencari Tahta\",\n            \"halaman_buku\": \"68\",\n            \"penerbit\": \"Julaeha\",\n            \"tahun_terbit\": \"2015\",\n            \"id_jenis_buku\": \"jns_003\"\n        }\n    ],\n    \"status\": \"success\",\n    \"response_code\": 200\n}"
+						},
+						{
+							"name": "Get By ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "KEY",
+										"value": "ulbi123",
+										"type": "text"
+									},
+									{
+										"key": "id_buku",
+										"value": "buku_003",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost/ci_rest_perpustakaan/index.php/buku/book?KEY=ulbi123&id_buku=buku_003",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"ci_rest_perpustakaan",
+										"index.php",
+										"buku",
+										"book"
+									],
+									"query": [
+										{
+											"key": "KEY",
+											"value": "ulbi123"
+										},
+										{
+											"key": "id_buku",
+											"value": "buku_003"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 07 Jul 2022 01:55:26 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/7.4.27"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.27"
+								},
+								{
+									"key": "Content-Length",
+									"value": "195"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id_buku\": \"buku_003\",\n            \"nama_buku\": \"Sang Pemimpi\",\n            \"halaman_buku\": \"292\",\n            \"penerbit\": \"Andrea Hirata\",\n            \"tahun_terbit\": \"2006\",\n            \"id_jenis_buku\": \"jns_003\"\n        }\n    ],\n    \"status\": \"success\",\n    \"response_code\": 200\n}"
+						},
+						{
+							"name": "Get Failed (No Data)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "KEY",
+										"value": "ulbi123",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "id_buku",
+										"value": "buku_003",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost/ci_rest_perpustakaan/index.php/buku/book?KEY=ulbi123&id_buku=buku_010",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"ci_rest_perpustakaan",
+										"index.php",
+										"buku",
+										"book"
+									],
+									"query": [
+										{
+											"key": "KEY",
+											"value": "ulbi123"
+										},
+										{
+											"key": "id_buku",
+											"value": "buku_010"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 07 Jul 2022 02:23:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/7.4.27"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.27"
+								},
+								{
+									"key": "Content-Length",
+									"value": "63"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"Data Tidak Ada\",\n    \"response_code\": 404\n}"
+						}
+					]
+				},
+				{
+					"name": "buku",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_buku",
+									"value": "buku_008",
+									"type": "text"
+								},
+								{
+									"key": "nama_buku",
+									"value": "Harta Tahta Kuliah",
+									"type": "text"
+								},
+								{
+									"key": "halaman_buku",
+									"value": "98",
+									"type": "text"
+								},
+								{
+									"key": "penerbit",
+									"value": "Suslanang",
+									"type": "text"
+								},
+								{
+									"key": "tahun_terbit",
+									"value": "2016",
+									"type": "text"
+								},
+								{
+									"key": "id_jenis_buku",
+									"value": "jns_003",
+									"type": "text"
+								},
+								{
+									"key": "KEY",
+									"value": "ulbi123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/ci_rest_perpustakaan/index.php/buku/book?KEY=ulbi123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ci_rest_perpustakaan",
+								"index.php",
+								"buku",
+								"book"
+							],
+							"query": [
+								{
+									"key": "KEY",
+									"value": "ulbi123"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Post Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_buku",
+											"value": "buku_008",
+											"type": "text"
+										},
+										{
+											"key": "nama_buku",
+											"value": "Harta Tahta Kuliah",
+											"type": "text"
+										},
+										{
+											"key": "halaman_buku",
+											"value": "98",
+											"type": "text"
+										},
+										{
+											"key": "penerbit",
+											"value": "Suslanang",
+											"type": "text"
+										},
+										{
+											"key": "tahun_terbit",
+											"value": "2016",
+											"type": "text"
+										},
+										{
+											"key": "id_jenis_buku",
+											"value": "jns_003",
+											"type": "text"
+										},
+										{
+											"key": "KEY",
+											"value": "ulbi123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost/ci_rest_perpustakaan/index.php/buku/book?KEY=ulbi123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"ci_rest_perpustakaan",
+										"index.php",
+										"buku",
+										"book"
+									],
+									"query": [
+										{
+											"key": "KEY",
+											"value": "ulbi123"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 07 Jul 2022 02:10:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/7.4.27"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.27"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"response_code\": 201,\n    \"message\": \"Data Berhasil Ditambahkan\"\n}"
+						},
+						{
+							"name": "Post Failed (Duplicate Data)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_buku",
+											"value": "buku_008",
+											"type": "text"
+										},
+										{
+											"key": "nama_buku",
+											"value": "Harta Tahta Kuliah",
+											"type": "text"
+										},
+										{
+											"key": "halaman_buku",
+											"value": "98",
+											"type": "text"
+										},
+										{
+											"key": "penerbit",
+											"value": "Suslanang",
+											"type": "text"
+										},
+										{
+											"key": "tahun_terbit",
+											"value": "2016",
+											"type": "text"
+										},
+										{
+											"key": "id_jenis_buku",
+											"value": "jns_003",
+											"type": "text"
+										},
+										{
+											"key": "KEY",
+											"value": "ulbi123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost/ci_rest_perpustakaan/index.php/buku/book?KEY=ulbi123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"ci_rest_perpustakaan",
+										"index.php",
+										"buku",
+										"book"
+									],
+									"query": [
+										{
+											"key": "KEY",
+											"value": "ulbi123"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 07 Jul 2022 02:10:47 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/7.4.27"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.27"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"response_code\": 400,\n    \"message\": \"Data Duplikat\"\n}"
+						},
+						{
+							"name": "Post Failed (Empty Data)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_buku",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "nama_buku",
+											"value": "Harta Tahta Kuliah",
+											"type": "text"
+										},
+										{
+											"key": "halaman_buku",
+											"value": "98",
+											"type": "text"
+										},
+										{
+											"key": "penerbit",
+											"value": "Suslanang",
+											"type": "text"
+										},
+										{
+											"key": "tahun_terbit",
+											"value": "2016",
+											"type": "text"
+										},
+										{
+											"key": "id_jenis_buku",
+											"value": "jns_003",
+											"type": "text"
+										},
+										{
+											"key": "KEY",
+											"value": "ulbi123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost/ci_rest_perpustakaan/index.php/buku/book?KEY=ulbi123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"ci_rest_perpustakaan",
+										"index.php",
+										"buku",
+										"book"
+									],
+									"query": [
+										{
+											"key": "KEY",
+											"value": "ulbi123"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 07 Jul 2022 02:11:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/7.4.27"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.27"
+								},
+								{
+									"key": "Content-Length",
+									"value": "94"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"response_code\": 400,\n    \"message\": \"Data Yang Dikirim Tidak Boleh Ada Yang Kosong\"\n}"
+						}
+					]
+				},
+				{
+					"name": "buku",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_buku",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "nama_buku",
+									"value": "Sejarah Lahirnya Diriku",
+									"type": "text"
+								},
+								{
+									"key": "halaman_buku",
+									"value": "99",
+									"type": "text"
+								},
+								{
+									"key": "penerbit",
+									"value": "Junaedi",
+									"type": "text"
+								},
+								{
+									"key": "tahun_terbit",
+									"value": "2016",
+									"type": "text"
+								},
+								{
+									"key": "id_jenis_buku",
+									"value": "jns_004",
+									"type": "text"
+								},
+								{
+									"key": "KEY",
+									"value": "ulbi123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/ci_rest_perpustakaan/index.php/buku/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ci_rest_perpustakaan",
+								"index.php",
+								"buku",
+								"book"
+							],
+							"query": [
+								{
+									"key": "KEY",
+									"value": "ulbi123",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Put Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_buku",
+											"value": "buku_006",
+											"type": "text"
+										},
+										{
+											"key": "nama_buku",
+											"value": "Sejarah Lahirnya Diriku",
+											"type": "text"
+										},
+										{
+											"key": "halaman_buku",
+											"value": "98",
+											"type": "text"
+										},
+										{
+											"key": "penerbit",
+											"value": "Junaedi",
+											"type": "text"
+										},
+										{
+											"key": "tahun_terbit",
+											"value": "2016",
+											"type": "text"
+										},
+										{
+											"key": "id_jenis_buku",
+											"value": "jns_004",
+											"type": "text"
+										},
+										{
+											"key": "KEY",
+											"value": "ulbi123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost/ci_rest_perpustakaan/index.php/buku/book",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"ci_rest_perpustakaan",
+										"index.php",
+										"buku",
+										"book"
+									],
+									"query": [
+										{
+											"key": "KEY",
+											"value": "ulbi123",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 07 Jul 2022 02:26:52 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/7.4.27"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.27"
+								},
+								{
+									"key": "Content-Length",
+									"value": "97"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"response_code\": 201,\n    \"message\": \"Data Buku Dengan id_buku buku_006 Berhasil Diubah\"\n}"
+						},
+						{
+							"name": "Put Failed",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_buku",
+											"value": "buku_006",
+											"type": "text"
+										},
+										{
+											"key": "nama_buku",
+											"value": "Sejarah Lahirnya Diriku",
+											"type": "text"
+										},
+										{
+											"key": "halaman_buku",
+											"value": "99",
+											"type": "text"
+										},
+										{
+											"key": "penerbit",
+											"value": "Junaedi",
+											"type": "text"
+										},
+										{
+											"key": "tahun_terbit",
+											"value": "2016",
+											"type": "text"
+										},
+										{
+											"key": "id_jenis_buku",
+											"value": "jns_004",
+											"type": "text"
+										},
+										{
+											"key": "KEY",
+											"value": "ulbi123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost/ci_rest_perpustakaan/index.php/buku/book",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"ci_rest_perpustakaan",
+										"index.php",
+										"buku",
+										"book"
+									],
+									"query": [
+										{
+											"key": "KEY",
+											"value": "ulbi123",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 07 Jul 2022 02:27:44 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/7.4.27"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.27"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"response_code\": 400,\n    \"message\": \"Gagal Mengubah Data\"\n}"
+						},
+						{
+							"name": "Put Failed (Empty ID)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_buku",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "nama_buku",
+											"value": "Sejarah Lahirnya Diriku",
+											"type": "text"
+										},
+										{
+											"key": "halaman_buku",
+											"value": "99",
+											"type": "text"
+										},
+										{
+											"key": "penerbit",
+											"value": "Junaedi",
+											"type": "text"
+										},
+										{
+											"key": "tahun_terbit",
+											"value": "2016",
+											"type": "text"
+										},
+										{
+											"key": "id_jenis_buku",
+											"value": "jns_004",
+											"type": "text"
+										},
+										{
+											"key": "KEY",
+											"value": "ulbi123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost/ci_rest_perpustakaan/index.php/buku/book",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"ci_rest_perpustakaan",
+										"index.php",
+										"buku",
+										"book"
+									],
+									"query": [
+										{
+											"key": "KEY",
+											"value": "ulbi123",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 07 Jul 2022 02:29:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/7.4.27"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.27"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"\",\n    \"response_code\": 400,\n    \"message\": \"id_buku Tidak Boleh Kosong\"\n}"
+						}
+					]
+				},
+				{
+					"name": "buku",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_buku",
+									"value": "buku_006",
+									"type": "text"
+								},
+								{
+									"key": "KEY",
+									"value": "ulbi123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/ci_rest_perpustakaan/index.php/buku/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ci_rest_perpustakaan",
+								"index.php",
+								"buku",
+								"book"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_buku",
+											"value": "buku_006",
+											"type": "text"
+										},
+										{
+											"key": "KEY",
+											"value": "ulbi123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost/ci_rest_perpustakaan/index.php/buku/book",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"ci_rest_perpustakaan",
+										"index.php",
+										"buku",
+										"book"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 07 Jul 2022 02:31:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/7.4.27"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.27"
+								},
+								{
+									"key": "Content-Length",
+									"value": "98"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"response_code\": 200,\n    \"message\": \"Data Buku Dengan id_buku buku_006 Berhasil Dihapus\"\n}"
+						},
+						{
+							"name": "Delete Failed (Data Not Found)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id_buku",
+											"value": "buku_006",
+											"type": "text"
+										},
+										{
+											"key": "KEY",
+											"value": "ulbi123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost/ci_rest_perpustakaan/index.php/buku/book",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"ci_rest_perpustakaan",
+										"index.php",
+										"buku",
+										"book"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 07 Jul 2022 02:31:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/7.4.27"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.27"
+								},
+								{
+									"key": "Content-Length",
+									"value": "98"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"response_code\": 400,\n    \"message\": \"Data Buku Dengan id_buku buku_006 Tidak Ditemukan\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Data_peminjaman",
+			"item": [
+				{
+					"name": "data_peminjaman",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "ulbi",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "pemrograman3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "KEY",
+								"value": "ulbi123",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/ci_rest_perpustakaan/index.php/data_peminjaman/pmjmn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ci_rest_perpustakaan",
+								"index.php",
+								"data_peminjaman",
+								"pmjmn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "data_peminjaman",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_peminjaman",
+									"value": "pnjm_3546",
+									"type": "text"
+								},
+								{
+									"key": "alasan_pinjam",
+									"value": "Buat kebutuhan akademik",
+									"type": "text"
+								},
+								{
+									"key": "tgl_pinjam",
+									"value": "2022-05-12",
+									"type": "text"
+								},
+								{
+									"key": "tgl_kembali",
+									"value": "2022-02-16",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "Kembali",
+									"type": "text"
+								},
+								{
+									"key": "id_peminjam",
+									"value": "org_007",
+									"type": "text"
+								},
+								{
+									"key": "id_buku",
+									"value": "buku_003",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/ci_rest_perpustakaan/index.php/data_peminjaman/pmjmn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ci_rest_perpustakaan",
+								"index.php",
+								"data_peminjaman",
+								"pmjmn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "data_peminjaman",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_peminjaman",
+									"value": "pnjm_3546",
+									"type": "text"
+								},
+								{
+									"key": "alasan_pinjam",
+									"value": "Dipnjam untuk dibaca di rumah",
+									"type": "text"
+								},
+								{
+									"key": "tgl_pinjam",
+									"value": "2022-05-12",
+									"type": "text"
+								},
+								{
+									"key": "tgl_kembali",
+									"value": "2022-02-16",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "Kembali",
+									"type": "text"
+								},
+								{
+									"key": "id_peminjam",
+									"value": "org_007",
+									"type": "text"
+								},
+								{
+									"key": "id_buku",
+									"value": "buku_003",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/ci_rest_perpustakaan/index.php/data_peminjaman/pmjmn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ci_rest_perpustakaan",
+								"index.php",
+								"data_peminjaman",
+								"pmjmn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "data_peminjaman",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_peminjaman",
+									"value": "pnjm_3546",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/ci_rest_perpustakaan/index.php/data_peminjaman/pmjmn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ci_rest_perpustakaan",
+								"index.php",
+								"data_peminjaman",
+								"pmjmn"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Peminjam",
+			"item": [
+				{
+					"name": "peminjam",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/ci_rest_perpustakaan/index.php/peminjam/lender",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ci_rest_perpustakaan",
+								"index.php",
+								"peminjam",
+								"lender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "peminjam",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_peminjam",
+									"value": "org_006",
+									"type": "text"
+								},
+								{
+									"key": "nama",
+									"value": "Fahira",
+									"type": "text"
+								},
+								{
+									"key": "jk",
+									"value": "Perempuan",
+									"type": "text"
+								},
+								{
+									"key": "no_telp",
+									"value": "0881567487",
+									"type": "text"
+								},
+								{
+									"key": "alamat",
+									"value": "Medan",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/ci_rest_perpustakaan/index.php/peminjam/lender",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ci_rest_perpustakaan",
+								"index.php",
+								"peminjam",
+								"lender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "peminjam",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_peminjam",
+									"value": "org_006",
+									"type": "text"
+								},
+								{
+									"key": "nama",
+									"value": "Fahira",
+									"type": "text"
+								},
+								{
+									"key": "jk",
+									"value": "Laki-laki",
+									"type": "text"
+								},
+								{
+									"key": "no_telp",
+									"value": "0881567487",
+									"type": "text"
+								},
+								{
+									"key": "alamat",
+									"value": "Bandung",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/ci_rest_perpustakaan/index.php/peminjam/lender",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ci_rest_perpustakaan",
+								"index.php",
+								"peminjam",
+								"lender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "peminjam",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_peminjam",
+									"value": "org_006",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/ci_rest_perpustakaan/index.php/peminjam/lender",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ci_rest_perpustakaan",
+								"index.php",
+								"peminjam",
+								"lender"
+							],
+							"query": [
+								{
+									"key": "id_nilai",
+									"value": "sco002",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Jenis_buku",
+			"item": [
+				{
+					"name": "jenis_buku",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/ci_rest_perpustakaan/index.php/jenis_buku/jns",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ci_rest_perpustakaan",
+								"index.php",
+								"jenis_buku",
+								"jns"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "jenis_buku",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_jenis_buku",
+									"value": "jns_006",
+									"type": "text"
+								},
+								{
+									"key": "nama_jenis_buku",
+									"value": "Ilmu Matematika",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/ci_rest_perpustakaan/index.php/jenis_buku/jns",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ci_rest_perpustakaan",
+								"index.php",
+								"jenis_buku",
+								"jns"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "jenis_buku",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_jenis_buku",
+									"value": "jns_006",
+									"type": "text"
+								},
+								{
+									"key": "nama_jenis_buku",
+									"value": "Ilmu FIsika",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/ci_rest_perpustakaan/index.php/jenis_buku/jns",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ci_rest_perpustakaan",
+								"index.php",
+								"jenis_buku",
+								"jns"
+							],
+							"query": [
+								{
+									"key": "kode_jenjang",
+									"value": "jen002",
+									"disabled": true
+								},
+								{
+									"key": "nama_jenjang",
+									"value": "S1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "jenis_buku",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_jenis_buku",
+									"value": "jns_006",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/ci_rest_perpustakaan/index.php/jenis_buku/jns",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ci_rest_perpustakaan",
+								"index.php",
+								"jenis_buku",
+								"jns"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
