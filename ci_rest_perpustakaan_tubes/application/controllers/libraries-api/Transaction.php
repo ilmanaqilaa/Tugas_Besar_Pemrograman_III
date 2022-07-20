@@ -8,23 +8,23 @@ require APPPATH . 'libraries/RestController.php';
 
 use chriskacerguis\RestServer\RestController;
 
-class Publisher extends RestController{
+class Transaction extends RestController{
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('publisher_model');
+        $this->load->model('transaction_model');
     }
 
-    public function pub_get()
+    public function trans_get()
     {
-        $publisher_id = $this->get('publisher_id');
-        $data = $this->publisher_model->getDatapublisher($publisher_id);
+        $transaction_id = $this->get('transaction_id');
+        $data = $this->transaction_model->getDatatransaction($transaction_id);
         // Jika variable data terdapat data didalamnya
         if($data){
             $this->response(
                 [
                     'data'          => $data,
-                    'status'        => 'success',
+                    'stat'        => 'success',
                     'response_code'   => RestController::HTTP_OK
                 ],
                 RestController::HTTP_OK
@@ -33,31 +33,41 @@ class Publisher extends RestController{
         }else {
             $this->response(
                 [
-                    'status'        => false,
+                    'stat'        => false,
                     'message'       => 'Data Tidak Ada',
-                    'response_code' => ResController::HTTP_NOT_FOUND
+                    'response_code' => RestController::HTTP_NOT_FOUND
                 ],
                 RestController::HTTP_NOT_FOUND
             );
         }
     }
 
-    function pub_post()
+    function trans_post()
     {
         $data = array(
-            'publisher_id' => $this->post('publisher_id'),
-            'publisher_name' => $this->post('publisher_name')
+            'transaction_id' => $this->post('transaction_id'),
+            'book_id' => $this->post('book_id'),
+            'officer_id' => $this->post('officer_id'),
+            'borrower_id' => $this->post('borrower_id'),
+            'borrow_date' => $this->post('borrow_date'),
+            'return_date' => $this->post('return_date'),
+            'status' => $this->post('status')
         );
         
-        $cek_data = $this->publisher_model->getDatapublisher($this->post('publisher_id'));
+        $cek_data = $this->transaction_model->getDatatransaction($this->post('transaction_id'));
 
         //Jika semua data wajib diisi
         if (
-            $data['publisher_id'] == NULL || 
-            $data['publisher_name'] == NULL) {
+            $data['transaction_id'] == NULL || 
+            $data['book_id'] == NULL || 
+            $data['officer_id'] == NULL || 
+            $data['borrower_id'] == NULL || 
+            $data['borrow_date'] == NULL || 
+            $data['return_date'] == NULL || 
+            $data['status'] == NULL) {
         $this->response(
         [
-            'status' => false,
+            'borrow_date' => false,
             'response_code' => RestController::HTTP_BAD_REQUEST,
             'message' => 'Data Yang Dikirim Tidak Boleh Ada Yang Kosong',
         ],
@@ -69,17 +79,17 @@ class Publisher extends RestController{
         } else if ($cek_data) {
         $this->response(
             [
-                'status' => false,
+                'stat' => false,
                 'response_code' => RestController::HTTP_BAD_REQUEST,
                 'message' => 'Data Duplikat',
             ],
             RestController::HTTP_BAD_REQUEST
         );
         //Jika data tersimpan
-        } elseif ($this->publisher_model->insertpublisher($data) > 0) {
+        } elseif ($this->transaction_model->inserttransaction($data) > 0) {
             $this->response(
             [
-                'status' => true,
+                'stat' => true,
                 'response_code' => RestController::HTTP_CREATED,
                 'message' => 'Data Berhasil Ditambahkan',
             ],
@@ -88,7 +98,7 @@ class Publisher extends RestController{
         } else {
             $this->response(
             [
-                'status' => false,
+                'borrow_date' => false,
                 'response_code' => RestController::HTTP_BAD_REQUEST,
                 'message' => 'Gagal Menambahkan Data',
             ],
@@ -97,36 +107,41 @@ class Publisher extends RestController{
         }
     }
 
-    function pub_put()
+    function trans_put()
     {
-        $publisher_id = $this->put('publisher_id');
+        $transaction_id = $this->put('transaction_id');
         $data = array(
-            'publisher_name' => $this->put('publisher_name')
+            'book_id' => $this->put('book_id'),
+            'officer_id' => $this->put('officer_id'),
+            'borrower_id' => $this->put('borrower_id'),
+            'borrow_date' => $this->put('borrow_date'),
+            'return_date' => $this->put('return_date'),
+            'status' => $this->put('status')
         );
-        //Jika field publisher_id tidak diisi
-        if ($publisher_id == NULL) {
+        //Jika field transaction_id tidak diisi
+        if ($transaction_id == NULL) {
             $this->response(
                 [
-                    'status' => $publisher_id,
+                    'stat' => $transaction_id,
                     'response_code' => RestController::HTTP_BAD_REQUEST,
-                    'message' => 'publisher_id Tidak Boleh Kosong',
+                    'message' => 'transaction_id Tidak Boleh Kosong',
                 ],
                 RestController::HTTP_BAD_REQUEST
                 );
         //Jika data berhasil berubah
-        } elseif ($this->publisher_model->updatepublisher($data, $publisher_id) > 0) {
+        } elseif ($this->transaction_model->updatetransaction($data, $transaction_id) > 0) {
         $this->response(                    
                 [
-                    'status' => true,
+                    'stat' => true,
                     'response_code' => RestController::HTTP_CREATED,
-                    'message' => 'Data publisher Dengan publisher_id '.$publisher_id.' Berhasil Diubah',
+                    'message' => 'Data transaction Dengan transaction_id '.$transaction_id.' Berhasil Diubah',
                 ],
                 RestController::HTTP_CREATED
                 );
         } else {
                 $this->response(
                 [
-                    'status' => false,
+                    'stat' => false,
                     'response_code' => RestController::HTTP_BAD_REQUEST,
                     'message' => 'Gagal Mengubah Data',
                 ],
@@ -135,28 +150,28 @@ class Publisher extends RestController{
                 }
         }
         
-        function pub_delete()
+        function trans_delete()
         {
-        $publisher_id = $this->delete('publisher_id');
+        $transaction_id = $this->delete('transaction_id');
 
-        //Jika field publisher_id tidak diisi
-        if ($publisher_id == NULL) {
+        //Jika field transaction_id tidak diisi
+        if ($transaction_id == NULL) {
             $this->response(
             [
-                'status' => $publisher_id,
+                'borrow_date' => $transaction_id,
                 'response_code' => RestController::HTTP_BAD_REQUEST,
-                'message' => 'publisher_id Tidak Boleh Kosong',
+                'message' => 'transaction_id Tidak Boleh Kosong',
             ],
             RestController::HTTP_BAD_REQUEST
         );
 
         //Kondisi ketika OK
-        } elseif ($this->publisher_model->deletepublisher($publisher_id) > 0) {
+        } elseif ($this->transaction_model->deletetransaction($transaction_id) > 0) {
             $this->response(
                 [
-                    'status' => true,
+                    'borrow_date' => true,
                     'response_code' => RestController::HTTP_OK,    
-                    'message' => 'Data publisher Dengan publisher_id '.$publisher_id.' Berhasil Dihapus',
+                    'message' => 'Data transaction Dengan transaction_id '.$transaction_id.' Berhasil Dihapus',
                 ],
                 RestController::HTTP_OK
                 );
@@ -164,10 +179,9 @@ class Publisher extends RestController{
                 } else {
                 $this->response(
                 [
-                'status' => false,
+                'borrow_date' => false,
                 'response_code' => RestController::HTTP_BAD_REQUEST,
-                'message' => 'Data publisher Dengan publisher_id '.$publisher_id.' Tidak
-                Ditemukan',
+                'message' => 'Data transaction Dengan transaction_id '.$transaction_id.' Tidak Ditemukan',
                 ],
                 RestController::HTTP_BAD_REQUEST
                 );

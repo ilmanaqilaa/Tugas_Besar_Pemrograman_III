@@ -35,7 +35,7 @@ class Data_Peminjaman extends RestController{
                 [
                     'status'        => false,
                     'message'       => 'Data Tidak Ada',
-                    'response_code' => ResController::HTTP_NOT_FOUND
+                    'response_code' => RestController::HTTP_NOT_FOUND
                 ],
                 RestController::HTTP_NOT_FOUND
             );
